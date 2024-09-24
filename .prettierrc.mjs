@@ -1,0 +1,26 @@
+export default {
+  tabWidth: 2,
+  singleQuote: false,
+  trailingComma: "es5",
+  printWidth: 120,
+  endOfLine: "lf",
+  plugins: [
+    (await import("@ianvs/prettier-plugin-sort-imports")).default,
+  ],
+  importOrder: [
+    "^@/lib/(.*)$",
+    "<THIRD_PARTY_MODULES>",
+    "^[.]"
+  ],
+  importOrderParserPlugins: ["typescript", "jsx", "decorators-legacy"],
+  importOrderTypeScriptVersion: "5.0.0",
+  overrides: [
+    {
+      files: ["*.ts", "*.tsx"],
+      options: {
+        singleQuote: false,
+        jsxSingleQuote: false
+      }
+    }
+  ]
+};
