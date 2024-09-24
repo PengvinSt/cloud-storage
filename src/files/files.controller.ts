@@ -1,7 +1,6 @@
 import {
   Controller,
   Post,
-  Body,
   UseInterceptors,
   UploadedFile,
   ParseFilePipe,
@@ -12,7 +11,6 @@ import {
   Delete,
 } from "@nestjs/common";
 import { FilesService } from "./files.service";
-import { CreateFileDto } from "./dto/create-file.dto";
 import { ApiBearerAuth, ApiBody, ApiConsumes, ApiTags } from "@nestjs/swagger";
 import { FileInterceptor } from "@nestjs/platform-express";
 import { fileStorage } from "./storage";
